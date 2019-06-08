@@ -7,5 +7,5 @@ import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));
-ReactDOM.render(<Training/>, document.getElementById('training'));
+// ReactDOM.render(<Training/>, document.getElementById('training'));
 serviceWorker.unregister();
