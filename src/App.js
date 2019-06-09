@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Training from "./Training";
 import Drawing from "./Drawing";
+import ErrorChart from "./ErrorChart";
 
 function App() {
 	return (
@@ -12,13 +13,14 @@ function App() {
 						Letters recognition with neural network and k-NN.
 					</p>
 				</header>
-
-				<Drawing/>
 				<div className="Column">
-					<Training/>
+					<Drawing/>
 				</div>
-				<div className="Column">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
-					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
+				<div id="trainingColumn" className="Column">
+					<Training text="Training not started"/>
+				</div>
+				<div className="Column">
+					<ErrorChart/>
 				</div>
 			</div>
 			<div className="clearfix"></div>
