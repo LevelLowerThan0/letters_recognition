@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
+import Canvas from './Canvas';
 
 
 
 class Drawing extends React.Component {
 	render() {
 		return <div>
-			<canvas id="drawingCanvas" width="600" height="750"/>
+			{/*<canvas id="drawingCanvas" width="600" height="750"/>*/}
 			Draw a letter and hit the button to see if the network and k-NN can recognize it.<br/>
 			<button id="clearButton">Clear canvas</button>
 			<button id="predictButton">Predict</button>
