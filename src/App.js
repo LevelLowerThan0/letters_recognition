@@ -3,7 +3,6 @@ import './App.css';
 import Training from "./Training";
 import Drawing from "./Drawing";
 import ErrorChart from "./ErrorChart";
-import Canvas from './Canvas';
 
 function App() {
 	return (
@@ -15,7 +14,6 @@ function App() {
 					</p>
 				</header>
 				<div className="Column">
-					<Canvas/>
 					<Drawing/>
 				</div>
 				<div id="trainingColumn" className="Column">
