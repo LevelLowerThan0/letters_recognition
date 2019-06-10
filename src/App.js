@@ -25,6 +25,7 @@ function App() {
 			</div>
 			<div className="clearfix"></div>
 			<div className="Documentation">
+				<hr className="splitLine"/>
 				<header id="documentation" className="App-header">
 					<p>
 						Documentation
@@ -43,6 +44,7 @@ function App() {
 					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
 				</div>
 			</div>
+			<hr className="splitFooter"/>
 			<footer className="clearfix">Authors: Marcel Mikołajko, Wiktor Androsiuk, Aleksander Wojtecki</footer>
 		</div>
 	);

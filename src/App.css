@@ -133,3 +133,25 @@ label
 	display: inline-block;
 	width: 140px;
 }
+
+#drawingCanvas
+{
+	background-color:  #474B4F;
+	margin-top: 30px;
+	border-color: #86C232;
+	border-style: outset;
+	border-width: 5px 5px 5px 5px ;
+}
+hr{
+	margin: 20px;
+	border-style: solid;
+	border-color: #61892F;
+}
+hr.splitLine{
+	 border-width: 2px;
+ }
+hr.splitFooter{
+	border-width: 1px;
+}
+
+
