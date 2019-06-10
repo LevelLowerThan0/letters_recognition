@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Training from './Training'
 import * as serviceWorker from './serviceWorker';
+import Drawing from "./Drawing";
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));
-// ReactDOM.render(<Training/>, document.getElementById('training'));
+Drawing.test();
+// let network = new NeuralNetwork(0.5, 5000);
+// network.train();
 serviceWorker.unregister();

@@ -1,46 +1,59 @@
 .App
 {
 	text-align: center;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100vh;
 }
 
-body
+html, body
 {
-	background-color: #282c34;
+	overflow: hidden;
+	background-color: #222629;
+	color: #d4d7db;
 }
 
 .App-header
 {
-	background-color: #282c34;
 	min-height: 10vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	color: #86C232;
 }
 
-.App-link
+.TrainingHeader
 {
-	color: #61dafb;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: #86C232;
+	min-height: 5vh;
 }
 
 .Content
 {
-	min-height: 85vh;
+	min-height: 100vh;
+	scroll-snap-align: start;
+}
+
+.Documentation
+{
+	min-height: 95vh;
+	scroll-snap-align: start;
 }
 
 .Column
 {
 	float: left;
 	/*bez borderów 33.33%*/
-	width: 33%;
-	color: white;
-	min-height: 30vh;
-	border-style: solid;
-	border-width: 1px;
-	border-color: white;
-	align-content: center;
+	width: 33.33%;
+	/*border-style: solid;*/
+	/*border-width: 1px;*/
+	/*border-color: white;*/
 
 }
 
@@ -61,14 +74,62 @@ body
 
 footer
 {
-	height: 40px;
-	color: white;
+	height: 5vh;
+	color: #61892F;
 }
 
-canvas
+button
 {
-	background: white;
-	width: 80%;
-	height: 50vh;
-	float: none;
+	width: 25%;
+	height: 5vh;
+	margin: 15px;
+	background-color: #222629;
+	border-color: #61892F;
+	color: #86C232;
+	border-radius: 60px;
+	border-style: solid;
+}
+
+button:hover
+{
+	width: 25%;
+	height: 5vh;
+	margin: 15px;
+	background-color: #474B4F;
+	border-color: #61892F;
+	color: #86C232;
+	border-radius: 60px;
+	border-style: solid;
+}
+
+input
+{
+	width: 50%;
+	height: 5vh;
+	margin: 15px;
+	border-radius: 25px;
+	background-color: #222629;
+	border-color: #61892F;
+	color: #86C232;
+	border-style: solid;
+	text-align: center;
+}
+
+input:hover
+{
+	width: 50%;
+	height: 5vh;
+	margin: 15px;
+	border-radius: 25px;
+	background-color: #474B4F;
+	border-color: #61892F;
+	color: #86C232;
+	border-style: solid;
+	text-align: center;
+}
+
+label
+{
+	display: inline-block;
+	width: 140px;
 }

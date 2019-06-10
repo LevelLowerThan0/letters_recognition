@@ -2,19 +2,42 @@ import React from 'react';
 import './App.css';
 import Training from "./Training";
 import Drawing from "./Drawing";
+import ErrorChart from "./ErrorChart";
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<p>
-					Letters recognition with neural network and k-NN.
-				</p>
-			</header>
 			<div className="Content">
-				<Drawing/>
+				<header id="content" className="App-header">
+					<p>
+						Letters recognition with neural network and k-NN.
+					</p>
+				</header>
 				<div className="Column">
-					<Training/>
+					<Drawing/>
+				</div>
+				<div id="trainingColumn" className="Column">
+					<Training text="Training not started"/>
+				</div>
+				<div className="Column">
+					<ErrorChart/>
+				</div>
+			</div>
+			<div className="clearfix"></div>
+			<div className="Documentation">
+				<header id="documentation" className="App-header">
+					<p>
+						Documentation
+					</p>
+				</header>
+
+				<div className="Column">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
+					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
+				</div>
+				<div className="Column">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
+					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
 				</div>
 				<div className="Column">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
 					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
