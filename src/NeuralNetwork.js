@@ -1,19 +1,21 @@
 import * as tf from "@tensorflow/tfjs";
 import ReactDOM from "react-dom";
-import App from "./index";
 import Training from "./Training";
 import React from "react";
 import ErrorChart from "./ErrorChart";
+
+export let neuralNetwork = undefined;
 
 class NeuralNetwork{
 
 	constructor(learningRate, epochs){
 		this.learningRate = learningRate;
 		this.epochs = epochs;
+		this.model = null;
 	}
 
 	train() {
-		const model = tf.sequential()
+		this.model = tf.sequential()
 
 		const hiddenLayer = tf.layers.dense({
 			units: 10,
@@ -25,9 +27,9 @@ class NeuralNetwork{
 			activation: 'sigmoid'
 		})
 
-		model.add(hiddenLayer)
-		model.add(outputLayer)
-		model.compile({
+		this.model.add(hiddenLayer)
+		this.model.add(outputLayer)
+		this.model.compile({
 			optimizer: tf.train.sgd(this.learningRate),
 			loss: tf.losses.meanSquaredError
 		})
@@ -44,12 +46,17 @@ class NeuralNetwork{
 			[1, 0, 0, 1, 1]
 		])
 
-		this.fit(model, x, y).then((result) => {
+		this.fit(this.model, x, y).then((result) => {
 			// model.predict(tf.tensor2d([[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7]])).print()
-			ReactDOM.render(<Training text="Training completed"/>, document.getElementById('trainingColumn'));
+			ReactDOM.render(<Training text="Training completed" learningRate={this.learningRate} epochs={this.epochs}/>, document.getElementById('trainingColumn'));
 			ErrorChart.drawChart(result);
 		})
 
+	}
+
+	predict(data)
+	{
+		this.model.predict(data).print();
 	}
 
 	async fit(model, x, y) {
@@ -57,4 +64,5 @@ class NeuralNetwork{
 		return h.history
 	}
 }
+
 export default NeuralNetwork
