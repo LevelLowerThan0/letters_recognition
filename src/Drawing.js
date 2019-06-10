@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {neuralNetwork} from "./NeuralNetwork.js";
+import {neuralNetwork} from "./Training";
 import * as tf from "@tensorflow/tfjs";
 
 class Drawing extends React.Component {

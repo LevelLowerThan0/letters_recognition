@@ -4,8 +4,6 @@ import Training from "./Training";
 import React from "react";
 import ErrorChart from "./ErrorChart";
 
-export let neuralNetwork = undefined;
-
 class NeuralNetwork{
 
 	constructor(learningRate, epochs){

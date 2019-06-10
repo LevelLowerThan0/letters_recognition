@@ -2,7 +2,8 @@ import React from "react";
 import './App.css';
 import ReactDOM from "react-dom";
 import NeuralNetwork from "./NeuralNetwork";
-import {neuralNetwork} from "./NeuralNetwork.js";
+
+export let neuralNetwork;
 
 class Training extends React.Component {
 
