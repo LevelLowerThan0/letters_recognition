@@ -1,4 +1,6 @@
 
+import {letterDictionary} from "./LetterDictionary";
+
 export function LoadData()
 {
     var predicted = [];
@@ -10,17 +12,19 @@ export function LoadData()
         rawFile.onreadystatechange = () => {
             if (rawFile.readyState === 4) {
                 if (rawFile.status === 200 || rawFile.status == 0) {
-                    var lines = rawFile.responseText;
-                    var i;
-                    for( i = 0 ; i < 16000; i++ ) {
+                    var lines = rawFile.responseText.split("\n");
+
+                    for(var i = 0 ; i < 4; i++ ) {
                         var elements = lines[i].split( "," );
                         var listOfElements = [];
 
-                        var j;
-                        for ( j = 1 ; j < elements.length ; j++ ) {
-                            listOfElements.push(parseInt( elements[j], 10 ));
+                        predicted.push(letterDictionary[elements[0]]);
+                        for ( var j = 1 ; j < elements.length ; j++ ) {
+                            listOfElements.push(parseInt(elements[j]));
                         }
                         values.push(listOfElements);
+
+
                     }
                 }
             }
