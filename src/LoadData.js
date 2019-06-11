@@ -10,8 +10,18 @@ export function LoadData()
         rawFile.onreadystatechange = () => {
             if (rawFile.readyState === 4) {
                 if (rawFile.status === 200 || rawFile.status == 0) {
-                    var allText = rawFile.responseText;
-                    console.log(allText);
+                    var lines = rawFile.responseText;
+                    var i;
+                    for( i = 0 ; i < 16000; i++ ) {
+                        var elements = lines[i].split( "," );
+                        var listOfElements = [];
+
+                        var j;
+                        for ( j = 1 ; j < elements.length ; j++ ) {
+                            listOfElements.push(parseInt( elements[j], 10 ));
+                        }
+                        values.push(listOfElements);
+                    }
                 }
             }
         };
@@ -20,3 +30,5 @@ export function LoadData()
 
     readTextFile("./letter-recognition.data");
 }
+
+
