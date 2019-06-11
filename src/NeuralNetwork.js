@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Training from "./Training";
 import React from "react";
 import ErrorChart from "./ErrorChart";
+import {LoadData} from "./LoadData";
 
 class NeuralNetwork{
 
@@ -10,6 +11,7 @@ class NeuralNetwork{
 		this.learningRate = learningRate;
 		this.epochs = epochs;
 		this.model = null;
+		LoadData();
 	}
 
 	train() {

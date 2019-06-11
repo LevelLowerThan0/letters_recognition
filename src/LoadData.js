@@ -1,21 +1,22 @@
-export function DataLoad()
+
+export function LoadData()
 {
     var predicted = [];
     var values = [];
 
-    const fs = require('fs')
+    let readTextFile = file => {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = () => {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
+                    var allText = rawFile.responseText;
+                    console.log(allText);
+                }
+            }
+        };
+        rawFile.send(null);
+    };
 
-    fs.readFile('letter-recognition.data', (err, data) => {
-        if (err) throw err;
-
-        var lines = data.toString().split("\n");
-
-        lines.forEach( e => {
-            var elements = e.split(",");
-
-            elements.forEach(f => {
-
-            })
-        })
-    });
+    readTextFile("./letter-recognition.data");
 }
