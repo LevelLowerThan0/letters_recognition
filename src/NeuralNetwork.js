@@ -11,7 +11,6 @@ class NeuralNetwork{
 		this.learningRate = learningRate;
 		this.epochs = epochs;
 		this.model = null;
-		LoadData();
 	}
 
 	train() {
@@ -34,17 +33,22 @@ class NeuralNetwork{
 			loss: tf.losses.meanSquaredError
 		})
 
-		const x = tf.tensor2d([
-			[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7],
-			[1, 2, 5, 4, 5, 6, 5, 8, 9, 1, 5, 3, 4, 5, 5, 7],
-			[1, 2, 1, 4, 5, 6, 1, 8, 9, 1, 2, 1, 4, 5, 6, 1]
-		])
+		let data = LoadData();
 
-		const y = tf.tensor2d([
-			[1, 1, 1, 1, 1],
-			[1, 1, 0, 0, 1],
-			[1, 0, 0, 1, 1]
-		])
+		const x = tf.tensor2d(data.parameters);
+		const y = tf.tensor2d(data.expected);
+
+		// const x = tf.tensor2d([
+		// 	[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7],
+		// 	[1, 2, 5, 4, 5, 6, 5, 8, 9, 1, 5, 3, 4, 5, 5, 7],
+		// 	[1, 2, 1, 4, 5, 6, 1, 8, 9, 1, 2, 1, 4, 5, 6, 1]
+		// ])
+		//
+		// const y = tf.tensor2d([
+		// 	[1, 1, 1, 1, 1],
+		// 	[1, 1, 0, 0, 1],
+		// 	[1, 0, 0, 1, 1]
+		// ])
 
 		this.fit(this.model, x, y).then((result) => {
 			// model.predict(tf.tensor2d([[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7]])).print()

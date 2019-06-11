@@ -1,38 +1,52 @@
-
 import {letterDictionary} from "./LetterDictionary";
 
-export function LoadData()
-{
-    var predicted = [];
-    var values = [];
+export function LoadData() {
+	let expected = [];
+	let parameters = [];
 
-    let readTextFile = file => {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = () => {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
-                    var lines = rawFile.responseText.split("\n");
+	let testExpected = [];
+	let testParameters = [];
 
-                    for(var i = 0 ; i < 4; i++ ) {
-                        var elements = lines[i].split( "," );
-                        var listOfElements = [];
+	let rawFile = new XMLHttpRequest();
+	rawFile.open("GET", "./letter-recognition.data", false);
+	rawFile.onreadystatechange = () => {
+		if (rawFile.readyState === 4) {
+			if (rawFile.status === 200 || rawFile.status === 0) {
+				let lines = rawFile.responseText.split("\n");
+				for (let i = 0; i < 16000; i++) {
+					let elements = lines[i].split(",");
+					let listOfElements = [];
 
-                        predicted.push(letterDictionary[elements[0]]);
-                        for ( var j = 1 ; j < elements.length ; j++ ) {
-                            listOfElements.push(parseInt(elements[j]));
-                        }
-                        values.push(listOfElements);
+					expected.push(letterDictionary[elements[0]]);
+					for (let j = 1; j < elements.length; j++) {
+						listOfElements.push(parseInt(elements[j]));
+					}
+					parameters.push(listOfElements);
+				}
 
+				for (let i = 16000; i < 20000; i++) {
+					let elements = lines[i].split(",");
+					let listOfElements = [];
 
-                    }
-                }
-            }
-        };
-        rawFile.send(null);
-    };
+					testParameters.push(letterDictionary[elements[0]]);
+					for (let j = 1; j < elements.length; j++) {
+						listOfElements.push(parseInt(elements[j]));
+					}
+					testExpected.push(listOfElements);
+				}
 
-    readTextFile("./letter-recognition.data");
+			}
+		}
+	};
+
+	rawFile.send(null);
+
+	return {
+		parameters: parameters,
+		expected: expected,
+		testParameters: testParameters,
+		testExpected: testExpected
+	};
 }
 
 
