@@ -51,6 +51,7 @@ html, body
 	float: left;
 	/*bez borderów 33.33%*/
 	width: 33.33%;
+	min-height: 90vh;
 	/*border-style: solid;*/
 	/*border-width: 1px;*/
 	/*border-color: white;*/
@@ -138,8 +139,9 @@ label
 {
 	background-color:  #474B4F;
 	margin-top: 30px;
-	border-color: #86C232;
-	border-style: outset;
+	border-color: #61892F;
+	border-style: solid;
+	border-radius: 60px;
 	border-width: 5px 5px 5px 5px ;
 }
 hr{
@@ -154,4 +156,6 @@ hr.splitFooter{
 	border-width: 1px;
 }
 
-
+#drawingDiv{
+	height: 90vh;
+}
