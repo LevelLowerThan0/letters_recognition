@@ -18,7 +18,7 @@ Our implementation is used to recognize letters from A to letter Z using 1 to 1 
 Each letter has it's own coding. 
 <br> 
 
-All attributes are array of 17 elements containing:
+All attributes are an array of 17 elements containing:
 1. Expected value of letter.
 2. The horizontal position, counting pixels from the left edge of the image, of the center of the smallest rectangular box that can be drawn with all "on" pixels inside the box. 
 3. The vertical position, counting pixels from the bottom, of the above box.
@@ -38,12 +38,9 @@ All attributes are array of 17 elements containing:
 17. The sum of horizontal positions of edges encountered as measured in 15 above.
  
 ### Solution and used tools 
-We have decided to use <B> React.js </B> for the graphics interface and <B> scikit learn for the classifires </B>.
-The clssifires that we have choosen are: <B>k-Nearest Neighbours</B> and a <B>Multilayer Neural Network</B>
+We have decided to use <B> React.js </B> for the graphics interface and <B> scikit learn for the classifires </B>.<br>
+The clssifires that we have choosen are: <B>k-Nearest Neighbours</B> and a <B>Multilayer Neural Network</B><br>
 Most of code was prepared using <B> WebStrorm and PyCharm</B>.
- 
-###	Preparing data to experiment
-At the begining of the training process application uses method <B> LoadData </B> from class <B> LoadData.js </B>.
 
   #### Loading data
 After loading data from <i> letter-recognition.data </i> file and parsing it we are creating four separate lists:
@@ -52,6 +49,14 @@ After loading data from <i> letter-recognition.data </i> file and parsing it we 
 3. List of testing expected values in <i> 1 to 1 </i> coding - 1st elemement from the line.
 4. List of testing parameters - other elements.
 
+  #### Neural Network structure
+Here are the parameters of our neural network:<br>
+inputs: 16<br>
+number of neurons in the hidden layer: 21<br>
+outputs: 26<br>
+activation function: <br>
+learning rate: <br>
+epochs: <br>
   #### Letter coding
 We decided to use "1 to 1" coding wich means that every letter is represented by a feature vector that has 25 0s and a 1 at the index coresponding to the position of the letter in English alphabet.
 >	"A" -> [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] <br>
@@ -62,16 +67,15 @@ etc.
   #### Normalization
 We are normalizing the input data to a number in range between 0 and 1.
 
-
-###	Evaluating model's quality 
+ ###	Evaluating model's quality 
 To evaluate model's quality we are calculating the prediction accuracy by using the last 4000 entries from the data file.
 Results:
-> k-Nearest Neighbours with k = 5 - 
-> Multilayer Neural Network - 
+> k-Nearest Neighbours with k = 5 - 81.7%<br>
+> Multilayer Neural Network - <br>
 
   #### Draw and recognize
 At the begining of this project we thougt that we will create aplication with drawing module.
-This module would be used for recognition letter prepared by user but we was unable to implement it because of lack of time.
+This module would be used for recognizing a letter prepared by the user but we was unable to implement it because of lack of time.
 <br>
 In future we are planning to go back to this project and finish this module.
 
