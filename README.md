@@ -40,7 +40,7 @@ All attributes are array of 17 elements containing:
 ### Metoda rozwiązywania, narzędzie programistyczne. 
 We have decided to use <B> React.js </B> application using <B> TenserFlow.JS </B>.
 
-Most of code was prepared using <b> WebStrorm <B>.
+Most of code was prepared using <B> WebStrorm </B>.
  
 ###	Preparing data to experiment
 At the begining of the training process application uses method <B> LoadData </B> from class <B> LoadData.js </B>.
