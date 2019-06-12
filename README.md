@@ -1,5 +1,5 @@
 ## Documentation of:
-#### Letters recognition with neural network and k-NN
+### Letters recognition with neural network and k-NN
 ##### [Authors Marcel Mikołajko, Wiktor Androsiuk, Aleksander Wojtecki]
 
 ### Project and data set description: 
