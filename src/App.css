@@ -1,7 +1,6 @@
 .App
 {
-	text-align: center;
-	scroll-snap-type: y mandatory;
+	/*scroll-snap-type: y mandatory;*/
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 100vh;
@@ -42,16 +41,17 @@ html, body
 
 .Documentation
 {
-	min-height: 95vh;
+	min-height: 85vh;
 	scroll-snap-align: start;
 }
 
 .Column
 {
 	float: left;
+	text-align: center;
 	/*bez borderów 33.33%*/
 	width: 33.33%;
-	min-height: 90vh;
+	min-height: 85vh;
 	/*border-style: solid;*/
 	/*border-width: 1px;*/
 	/*border-color: white;*/
@@ -63,8 +63,11 @@ html, body
 	content: "";
 	clear: both;
 	display: table;
-}
 
+}
+footer{
+	text-align: center;
+}
 @media screen and (max-width: 600px)
 {
 	.column
@@ -107,7 +110,7 @@ input
 {
 	width: 50%;
 	height: 5vh;
-	margin: 15px;
+	margin: 5px;
 	border-radius: 25px;
 	background-color: #222629;
 	border-color: #61892F;
@@ -120,7 +123,7 @@ input:hover
 {
 	width: 50%;
 	height: 5vh;
-	margin: 15px;
+	margin: 5px;
 	border-radius: 25px;
 	background-color: #474B4F;
 	border-color: #61892F;
@@ -145,7 +148,7 @@ label
 	border-width: 5px 5px 5px 5px ;
 }
 hr{
-	margin: 20px;
+	margin: 0px;
 	border-style: solid;
 	border-color: #61892F;
 }
@@ -158,4 +161,38 @@ hr.splitFooter{
 
 #drawingDiv{
 	height: 90vh;
+}
+
+#documentation{
+	min-height: 7vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: #86C232;
+}
+
+.documentationDiv{
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	/*align-items: start;*/
+	/*justify-content: start;*/
+	text-align: left;
+	/*font-size: calc(10px + 2vmin);*/
+}
+
+.documentationHeader{
+	min-height: 3vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(5px + 2vmin);
+	color: #86C232;
+}
+
+a{
+	color: #61892F;
 }

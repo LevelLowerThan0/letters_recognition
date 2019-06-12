@@ -9,19 +9,20 @@ class ErrorChart extends React.Component {
 		</div>
 	}
 
-	static drawChart(history) {
-		console.log(history);
+	static drawChart(data, labels) {
 		let canvas = document.getElementById("chartCanvas");
 		let context = canvas.getContext("2d");
 		new Chart(context, {
 			type: 'line',
 			data: {
+				labels: labels,
 				datasets: [{
-					data: history.loss,
-					borderWidth: 4,
+					data: data,
+					borderWidth: 2,
 					backgroundColor: "#474B4F",
 					borderColor: "#86C232",
-					fill: false
+					fill: false,
+					pointRadius: 1
 				}]
 			},
 			options: {

@@ -24,26 +24,7 @@ function App() {
 				</div>
 			</div>
 			<div className="clearfix"></div>
-			<div className="Documentation">
-				<hr className="splitLine"/>
-				<header id="documentation" className="App-header">
-					<p>
-						Documentation
-					</p>
-				</header>
 
-				<div className="Column">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
-					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-				</div>
-				<div className="Column">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
-					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-				</div>
-				<div className="Column">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet
-					pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-				</div>
-			</div>
 			<hr className="splitFooter"/>
 			<footer className="clearfix">Authors: Marcel Mikołajko, Wiktor Androsiuk, Aleksander Wojtecki</footer>
 		</div>
