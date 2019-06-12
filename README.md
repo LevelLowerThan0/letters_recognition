@@ -6,7 +6,7 @@
 
 We have decided to solve 'Letters recognition' problem using data from:
 <br>
-[ https://archive.ics.uci.edu/ml/datasets/Letter+Recognition ]
+> [ https://archive.ics.uci.edu/ml/datasets/Letter+Recognition ]
 
 Our test implementation involves 26 categories and 20,000 unique test patterns.
 We separeted input data in proportions of 80-20%. 
@@ -28,7 +28,8 @@ All attributes are array of 17 elements containing:
 7. The mean horizontal position of all "on" pixels relative to the center of the box and divided by the width of the box. This feature has a negative value if the image is "left- heavy" as would be the case for the letter L. 
 8. The mean vertical position of all "on" pixels relative to the center of the box and divided by the height of the box. 
 9. The mean squared value of the horizontal pixel distances as measured in 6 above. This attribute will have a higher value for images whose pixels are more widely separated in the horizontal direction as would be the case for the letters W or M. 
-10. The mean squared value of the vertical pixel distances as measured in 7 above. 10. The mean product of the horizontal and vertical distances for each "on" pixel as meas- ured in 6 and 7 above. This attribute has a positive value for diagonal lines that run from bottom left to top right and a negative value for diagonal lines from top left to bottom right. 
+10. The mean squared value of the vertical pixel distances as measured in 7 above. 
+11. The mean product of the horizontal and vertical distances for each "on" pixel as meas- ured in 6 and 7 above. This attribute has a positive value for diagonal lines that run from bottom left to top right and a negative value for diagonal lines from top left to bottom right. 
 12. The mean value of the squared horizontal distance times the vertical distance for each "on" pixel. This measures the correlation of the horizontal variance with the vertical position. 
 13. The mean value of the squared vertical distance times the horizontal distance for each "on" pixel. This measures the correlation of the vertical variance with the horizontal position. 
 14. The mean number of edges (an "on" pixel immediately to the right of either an "off" pixel or the image boundary) encountered when making systematic scans from leftto right at all vertical positions within the box. This measure distinguishes between letters like "W" or "M" and letters like 'T' or "L." 
@@ -39,11 +40,17 @@ All attributes are array of 17 elements containing:
 
  
 ### Metoda rozwiązywania, narzędzie programistyczne. 
-.
-.
+
+We have decided to use <B> REACT </B> application using <B> TENSERFLOW.JS </B>.
+
+
 ###	Przygotowanie danych do eksperymentu. 
-.
-.
+
+At the begining of the training process application uses method <B> LoadData </B> from class <B> LoadData.js </B>.
+ #### LoadData
+This method includes loading data from > letter-recognition.data < file and parsing the whole lines to two separate lists:
+1. List of expected values - 1st elemement from line.
+2. List of parameters - other elements.
 ###	Metoda oceniania jakości modelu. 
 .
 .
@@ -55,6 +62,32 @@ All attributes are array of 17 elements containing:
 .
 
  <hr>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
