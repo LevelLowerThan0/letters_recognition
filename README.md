@@ -12,7 +12,6 @@ Our test implementation involves 26 categories and 20,000 unique test patterns.
 We separeted input data in proportions of 80-20%. 
 <br>
 * 80% of input data is used for whole training process. 
-<br>
 * 20% of input data is used for letter recognition.
 
 Our implementation is used to recognize letters from A to letter Z using binary coding.
