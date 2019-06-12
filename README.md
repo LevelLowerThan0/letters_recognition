@@ -52,7 +52,7 @@ After loading data from <i> letter-recognition.data </i> file and parsing it we 
   #### Neural Network structure
 Here are the parameters of our neural network:<br>
 inputs: 16<br>
-number of neurons in the hidden layer: 21<br>
+number of neurons in the hidden layer: 30<br>
 outputs: 26<br>
 activation function: sigmoid<br>
 learning rate: 0.05<br>
@@ -70,8 +70,8 @@ We are normalizing the input data to a number in range between 0 and 1.
  ###	Evaluating model's quality 
 To evaluate model's quality we are calculating the prediction accuracy by using the last 4000 entries from the data file.
 Results:
-> k-Nearest Neighbours with k = 5 - 93.7%<br>
-> Multilayer Neural Network - 75%<br>
+> k-Nearest Neighbours with k = 5 - 94.7%<br>
+> Multilayer Neural Network - 80%<br>
 
   #### Draw and recognize
 At the begining of this project we thougt that we will create aplication with drawing module.
