@@ -1,16 +1,43 @@
-## ------------------------------------------------------------------------------------------
 ## Documentation of:
 #### Letters recognition with neural network and k-NN
 ##### [Authors Marcel Mikołajko, Wiktor Androsiuk, Aleksander Wojtecki]
 
 ### Opis zadania i zbioru danych: liczba atrybutów; liczba rekordów, rozkład klas decyzyjnych. 
 
+We have decided to solve 'Letters recognition' problem using data from:
+<br>
+[ https://archive.ics.uci.edu/ml/datasets/Letter+Recognition ]
 
 Our test implementation involves 26 categories and 20,000 unique test patterns.
-We separeted input data in proportions of 80-20%. <br>
+We separeted input data in proportions of 80-20%. 
+<br>
+* 80% of input data is used for whole training process. 
+<br>
+* 20% of input data is used for letter recognition.
 
-80% of input data is used for whole training process. <br>
-20% of input data is used for letter recognition.
+Our implementation is used to recognize letters from A to letter Z using binary coding.
+Each letter has her own coding. 
+<br> 
+
+All attributes are array of 17 elements containing:
+1. Expected value of letter.
+2. The horizontal position, counting pixels from the left edge of the image, of the center of the smallest rectangular box that can be drawn with all "on" pixels inside the box. 
+3. The vertical position, counting pixels from the bottom, of the above box.
+4. The width, in pixels, of the box.
+5. The height, in pixels, of the box. 
+6. The total number of "on" pixels in the character image. 
+7. The mean horizontal position of all "on" pixels relative to the center of the box and divided by the width of the box. This feature has a negative value if the image is "left- heavy" as would be the case for the letter L. 
+8. The mean vertical position of all "on" pixels relative to the center of the box and divided by the height of the box. 
+9. The mean squared value of the horizontal pixel distances as measured in 6 above. This attribute will have a higher value for images whose pixels are more widely separated in the horizontal direction as would be the case for the letters W or M. 
+10. The mean squared value of the vertical pixel distances as measured in 7 above. 10. The mean product of the horizontal and vertical distances for each "on" pixel as meas- ured in 6 and 7 above. This attribute has a positive value for diagonal lines that run from bottom left to top right and a negative value for diagonal lines from top left to bottom right. 
+12. The mean value of the squared horizontal distance times the vertical distance for each "on" pixel. This measures the correlation of the horizontal variance with the vertical position. 
+13. The mean value of the squared vertical distance times the horizontal distance for each "on" pixel. This measures the correlation of the vertical variance with the horizontal position. 
+14. The mean number of edges (an "on" pixel immediately to the right of either an "off" pixel or the image boundary) encountered when making systematic scans from leftto right at all vertical positions within the box. This measure distinguishes between letters like "W" or "M" and letters like 'T' or "L." 
+15. The sum of the vertical positions of edges encountered as measured in 13 above. This feature will give a higher value if there are more edges at the top of the box, as in the letter "Y."
+16. The mean number of edges (an "on" pixel immediately above either an "off" pixel or the image boundary) encountered when making systematic scans of the image from bottom to top over all horizontal positions within the box. 
+17. The sum of horizontal positions of edges encountered as measured in 15 above.
+ 
+
  
 ### Metoda rozwiązywania, narzędzie programistyczne. 
 .
@@ -28,8 +55,7 @@ We separeted input data in proportions of 80-20%. <br>
 .
 .
 
-
-## ------------------------------------------------------------------------------------------
+ <hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
