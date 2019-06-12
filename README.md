@@ -37,29 +37,42 @@ All attributes are array of 17 elements containing:
 16. The mean number of edges (an "on" pixel immediately above either an "off" pixel or the image boundary) encountered when making systematic scans of the image from bottom to top over all horizontal positions within the box. 
 17. The sum of horizontal positions of edges encountered as measured in 15 above.
  
-
- 
 ### Metoda rozwiązywania, narzędzie programistyczne. 
 
-We have decided to use <B> REACT </B> application using <B> TENSERFLOW.JS </B>.
+We have decided to use <B> React.js </B> application using <B> TenserFlow.JS </B>.
 
 
 ###	Przygotowanie danych do eksperymentu. 
 
 At the begining of the training process application uses method <B> LoadData </B> from class <B> LoadData.js </B>.
- #### LoadData
-This method includes loading data from > letter-recognition.data < file and parsing the whole lines to two separate lists:
-1. List of expected values - 1st elemement from line.
-2. List of parameters - other elements.
+
+  #### LoadData
+This method includes loading data from <i> letter-recognition.data </i> file and parsing the whole lines to four separate lists:
+1. List of training expected values in binary coding- 1st elemement from line.
+2. List of training parameters - other elements.
+3. List of testing expected values in binary coding - 1st elemement from line.
+4. List of testing parameters - other elements.
+
+Letters from the first element of array are converted into binary coding using prepared map containing all letters with coding.
+To convert it, simply take coding from map using letter from loaded data ad put it into both of expected lists.
+
+
+
+
 ###	Metoda oceniania jakości modelu. 
 .
 .
 ###	Wyniki eksperymentalne + wykresy w razie potrzeby.
 .
 .
+
 ###	Własne komentarze, wnioski. 
-.
-.
+
+  #### Draw and recognize
+At the begining of this project we thougt that we will create aplication with drawing module.
+This module would be used for recognition letter prepared by user but we was unable to implement it because of lack of time.
+<br>
+In future we are planning to go back to this project and finish this module.
 
  <hr>
  
