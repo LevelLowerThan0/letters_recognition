@@ -2,11 +2,11 @@
 #### Letters recognition with neural network and k-NN
 ##### [Authors Marcel Mikołajko, Wiktor Androsiuk, Aleksander Wojtecki]
 
-### Opis zadania i zbioru danych: liczba atrybutów; liczba rekordów, rozkład klas decyzyjnych. 
+### Project and data set description: 
 
 We have decided to solve 'Letters recognition' problem using data from:
 <br>
-> [ https://archive.ics.uci.edu/ml/datasets/Letter+Recognition ]
+> https://archive.ics.uci.edu/ml/datasets/Letter+Recognition
 
 Our test implementation involves 26 categories and 20,000 unique test patterns.
 We separeted input data in proportions of 80-20%. 
@@ -14,7 +14,7 @@ We separeted input data in proportions of 80-20%.
 * 80% of input data is used for whole training process. 
 * 20% of input data is used for letter recognition.
 
-Our implementation is used to recognize letters from A to letter Z using binary coding.
+Our implementation is used to recognize letters from A to letter Z using 1 to 1 coding.
 Each letter has her own coding. 
 <br> 
 
@@ -32,37 +32,48 @@ All attributes are array of 17 elements containing:
 11. The mean product of the horizontal and vertical distances for each "on" pixel as meas- ured in 6 and 7 above. This attribute has a positive value for diagonal lines that run from bottom left to top right and a negative value for diagonal lines from top left to bottom right. 
 12. The mean value of the squared horizontal distance times the vertical distance for each "on" pixel. This measures the correlation of the horizontal variance with the vertical position. 
 13. The mean value of the squared vertical distance times the horizontal distance for each "on" pixel. This measures the correlation of the vertical variance with the horizontal position. 
-14. The mean number of edges (an "on" pixel immediately to the right of either an "off" pixel or the image boundary) encountered when making systematic scans from leftto right at all vertical positions within the box. This measure distinguishes between letters like "W" or "M" and letters like 'T' or "L." 
+14. The mean number of edges (an "on" pixel immediately to the right of either an "off" pixel or the image boundary) encountered when making systematic scans from left to right at all vertical positions within the box. This measure distinguishes between letters like "W" or "M" and letters like 'T' or "L." 
 15. The sum of the vertical positions of edges encountered as measured in 13 above. This feature will give a higher value if there are more edges at the top of the box, as in the letter "Y."
 16. The mean number of edges (an "on" pixel immediately above either an "off" pixel or the image boundary) encountered when making systematic scans of the image from bottom to top over all horizontal positions within the box. 
 17. The sum of horizontal positions of edges encountered as measured in 15 above.
  
 ### Metoda rozwiązywania, narzędzie programistyczne. 
-
 We have decided to use <B> React.js </B> application using <B> TenserFlow.JS </B>.
 
-
-###	Przygotowanie danych do eksperymentu. 
-
+Most of code was prepared using <b> WebStrorm <B>.
+ 
+###	Preparing data to experiment
 At the begining of the training process application uses method <B> LoadData </B> from class <B> LoadData.js </B>.
 
   #### LoadData
 This method includes loading data from <i> letter-recognition.data </i> file and parsing the whole lines to four separate lists:
-1. List of training expected values in binary coding- 1st elemement from line.
+1. List of training expected values in <i> 1 to 1 </i> coding- 1st elemement from line.
 2. List of training parameters - other elements.
-3. List of testing expected values in binary coding - 1st elemement from line.
+3. List of testing expected values in <i> 1 to 1 </i> coding - 1st elemement from line.
 4. List of testing parameters - other elements.
 
-Letters from the first element of array are converted into binary coding using prepared map containing all letters with coding.
+Letters from the first element of array are converted into <i> 1 to 1 </i> coding using prepared map containing all letters with coding.
 To convert it, simply take coding from map using letter from loaded data ad put it into both of expected lists.
 
+  #### LetterDictionary
+This clas is basicly map containing list of letters and 1 to 1 coding. for example:
+>	"A" -> [0, 0, 0, 0, 0] <br>
+> "B" -> [0, 0, 0, 0, 1] <br>
+>	"C" -> [0, 0, 0, 1, 0] <br>
+
+This clas is used in converting Letter from input array into it coding.
+
+  #### Normalization
+We are normalizing input data to number in range between 0 and 1.
 
 
 
 ###	Metoda oceniania jakości modelu. 
 .
 .
+.
 ###	Wyniki eksperymentalne + wykresy w razie potrzeby.
+.
 .
 .
 
