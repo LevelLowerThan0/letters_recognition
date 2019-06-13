@@ -52,11 +52,11 @@ After loading data from <i> letter-recognition.data </i> file and parsing it we 
   #### Neural Network structure
 Here are the parameters of our neural network:<br>
 inputs: 16<br>
-number of neurons in the hidden layer: 30<br>
+number of neurons in the hidden layer: 78<br>
 outputs: 26<br>
 activation function: sigmoid<br>
-learning rate: 0.05<br>
-epochs: 500<br>
+learning rate: 0.02<br>
+epochs: 600<br>
   #### Letter coding
 We decided to use "1 to 1" coding wich means that every letter is represented by a feature vector that has 25 0s and a 1 at the index coresponding to the position of the letter in English alphabet.
 >	"A" -> [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] <br>
@@ -70,8 +70,8 @@ We are normalizing the input data to a number in range between 0 and 1.
  ###	Evaluating model's quality 
 To evaluate model's quality we are calculating the prediction accuracy by using the last 4000 entries from the data file.
 Results:
-> k-Nearest Neighbours with k = 5 - 94.7%<br>
-> Multilayer Neural Network - 80%<br>
+> k-Nearest Neighbours with k = 3 - 94.7%<br>
+> Multilayer Neural Network - 90%<br>
 
   #### Draw and recognize
 At the begining of this project we thougt that we will create aplication with drawing module.
